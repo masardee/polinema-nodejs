@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  p Alamat = #{address}
+  p Phone = #{phone}
+  p Email = #{email}
+  
+  form(method='POST' action='/submit')
+    div.form-group
+      label(for='nama') Nama:
+      input#name.form-control(type='text', placeholder='first and last' name='nama')
+    div.form-group
+      label(for='pesan') Pesan:
+      input#name.form-control(type='text', placeholder='first and last' name='pesan')
+    div.form-group
+      label(for='pesan')
+      input#submit.form-control(type='submit', placeholder='first and last' name='')
+    
