@@ -21,8 +21,16 @@ io.on('connection', function(socket){
             username: 'Server',
             message: 'Halo juga'
         });
+        
+        // Broadcast
+        socket.broadcast.emit('chat', data);
     });
 
+});
+
+// Show HTML File
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/index.html');
 });
 
 http.listen(3000, function(){
